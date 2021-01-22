@@ -38,7 +38,7 @@ public class SignInStepDefs {
 		
 		assertEquals("Login - My Store", title);
 		
-		Driver.quit();
+		
 	
 		
 	  
@@ -66,6 +66,25 @@ public class SignInStepDefs {
 		assertTrue(sp.errorMessage.isDisplayed());
 		assertEquals("Authentication failed.", sp.errorMessage.getText());
 		Driver.quit();
+	}
+	
+	
+	@When("The user enters no credentials")
+	public void the_user_enters_no_credentials() {
+		SignInPage sp = new SignInPage();
+		
+		sp.username.sendKeys("");
+		sp.password.sendKeys("");
+		sp.signInButton.click();
+	}
+
+	@Then("The user should not login and the error message should appear with the text An email address required")
+	public void the_user_should_not_login_and_the_error_message_should_appear_with_the_text_an_email_address_required() {
+		SignInPage sp = new SignInPage();
+		
+		assertTrue(sp.errorMessage.isDisplayed());
+		assertEquals("An email address required.", sp.errorMessage.getText());
+		
 	}
 	
 	

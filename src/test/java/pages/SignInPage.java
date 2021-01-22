@@ -22,7 +22,7 @@ public class SignInPage {
 	@FindBy (id = "SubmitLogin")
 	public WebElement signInButton;
 
-	@FindBy (xpath = "//li[.='Authentication failed.']")
+	@FindBy (xpath = "//ol/li")
 	public WebElement errorMessage;
 
 }
