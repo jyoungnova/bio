@@ -15,5 +15,9 @@ public class HomePage {
 	
 	@FindBy (xpath = "//a[@class='login']")
 	public WebElement signInLink;
+	
+	
+	@FindBy (id = "search_query_top")
+	public WebElement searchBar;
 
 }

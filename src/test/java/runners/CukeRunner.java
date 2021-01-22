@@ -9,6 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions (
 		
+		tags = "@smoke",    //"@negative or @smoke", "@smoke and @negative and @login"
+		
 		features = "src/test/resources/features",  // feature file folder path
 		glue = "step_definitions", // step def classes folder path
 		
