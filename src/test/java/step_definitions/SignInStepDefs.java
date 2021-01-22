@@ -1,11 +1,13 @@
 package step_definitions;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
+import pages.SignInPage;
 import utilities.Driver;
 
 public class SignInStepDefs {
@@ -34,7 +36,34 @@ public class SignInStepDefs {
 		
 		assertEquals("Login - My Store", title);
 		
+		Driver.quit();
+	
+		
 	  
+	}
+	
+	
+	
+	@When("The user enters incorrect credentials")
+	public void the_user_enters_incorrect_credentials() {
+		
+		SignInPage sp = new SignInPage();
+		
+		sp.username.sendKeys("wrong@wrong.com");
+		sp.password.sendKeys("wrongpass");
+		sp.signInButton.click();
+		
+	  
+	}
+
+	@Then("The user should not login and the error message should appear with the text Invalid Email Address")
+	public void the_user_should_not_login_and_the_error_message_should_appear() {
+	  
+		SignInPage sp = new SignInPage();
+		
+		assertTrue(sp.errorMessage.isDisplayed());
+		assertEquals("Authentication failed.", sp.errorMessage.getText());
+		Driver.quit();
 	}
 
 }

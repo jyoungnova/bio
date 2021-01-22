@@ -9,13 +9,17 @@ import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions (
 		
-		features = "src/test/resources/features",
-		glue = "step_definitions"
+		features = "src/test/resources/features",  // feature file folder path
+		glue = "step_definitions", // step def classes folder path
 		
+		plugin = {"summary"}  // for generating step definition snippets
 		
+//		,dryRun = true  // to run the test without launching, we need this to generate step def snippets
 		
+		,monochrome = true  // to display console characters correctly in Windows
 		
-		
+		,stepNotifications = true	// to see the step reports for each step of scenarios	
+				
 		)
 public class CukeRunner {
 
