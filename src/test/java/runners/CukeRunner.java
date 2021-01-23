@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @CucumberOptions (
 		
-		tags = "@signin",    //"@negative or @smoke", "@smoke and @negative and @login"
+		tags = "@temp",    //"@negative or @smoke", "@smoke and @negative and @login"
 		
 		features = "src/test/resources/features",  // feature file folder path
 		glue = "step_definitions", // step def classes folder path

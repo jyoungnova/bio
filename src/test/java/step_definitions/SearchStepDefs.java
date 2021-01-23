@@ -1,12 +1,14 @@
 package step_definitions;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.openqa.selenium.Keys;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
+import pages.SearchPage;
 import utilities.Driver;
 
 public class SearchStepDefs {
@@ -25,5 +27,38 @@ public class SearchStepDefs {
 	    
 	    assertEquals("Search - My Store", actualTitle);
 	}
+	
+	
+	@When("The user enters Blouse in the search bar")
+	public void theUserEntersBlouseInTheSearchBar() {
+		 HomePage hp = new HomePage();
+		 hp.searchBar.sendKeys("Blouse" + Keys.ENTER);
+	}
 
+	@Then("The user should see Blouse in the search page")
+	public void theUserShouldSeeBlouseInTheSearchPage() {
+	    SearchPage sp = new SearchPage();
+	    String actualText = sp.searchHeader.getText().toLowerCase();
+	    System.out.println(actualText);
+	    assertTrue(actualText.contains("Blouse".toLowerCase()));
+			
+	}
+	
+	
+	
+	@When("The user enters {string} in the search bar")
+	public void theUserEntersInTheSearchBar(String product) {
+		HomePage hp = new HomePage();
+		 hp.searchBar.sendKeys(product + Keys.ENTER);
+	}
+
+	@Then("The user should see {string} in the search page")
+	public void theUserShouldSeeInTheSearchPage(String product) {
+		SearchPage sp = new SearchPage();
+	    String actualText = sp.searchHeader.getText().toLowerCase();
+	    System.out.println(actualText);
+	    assertTrue(actualText.contains(product.toLowerCase()));
+	}
+	
+	
 }
