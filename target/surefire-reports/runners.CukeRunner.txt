@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: runners.CukeRunner
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 23.396 sec <<< FAILURE!
+The user should not login and the error message should appear with the text Invalid Email Address(Verify negative login using wrong credentials)  Time elapsed: 0.105 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<Authentication fail[].> but was:<Authentication fail[ed].>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at step_definitions.SignInStepDefs.the_user_should_not_login_and_the_error_message_should_appear(SignInStepDefs.java:67)
+	at ?.The user should not login and the error message should appear with the text Invalid Email Address(file:///C:/Users/Duotech/eclipsez/cucumber-bdd-framework/src/test/resources/features/sign_in.feature:17)
+
+Verify negative login using wrong credentials  Time elapsed: 1.332 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<Authentication fail[].> but was:<Authentication fail[ed].>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at step_definitions.SignInStepDefs.the_user_should_not_login_and_the_error_message_should_appear(SignInStepDefs.java:67)
+	at ?.The user should not login and the error message should appear with the text Invalid Email Address(file:///C:/Users/Duotech/eclipsez/cucumber-bdd-framework/src/test/resources/features/sign_in.feature:17)
+
+The user should not login and the error message should appear with the text An email address required(Verify negative login using no credentials)  Time elapsed: 0.1 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<An email address [need]ed.> but was:<An email address [requir]ed.>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at step_definitions.SignInStepDefs.the_user_should_not_login_and_the_error_message_should_appear_with_the_text_an_email_address_required(SignInStepDefs.java:86)
+	at ?.The user should not login and the error message should appear with the text An email address required(file:///C:/Users/Duotech/eclipsez/cucumber-bdd-framework/src/test/resources/features/sign_in.feature:22)
+
+Verify negative login using no credentials  Time elapsed: 1.251 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<An email address [need]ed.> but was:<An email address [requir]ed.>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at step_definitions.SignInStepDefs.the_user_should_not_login_and_the_error_message_should_appear_with_the_text_an_email_address_required(SignInStepDefs.java:86)
+	at ?.The user should not login and the error message should appear with the text An email address required(file:///C:/Users/Duotech/eclipsez/cucumber-bdd-framework/src/test/resources/features/sign_in.feature:22)
+

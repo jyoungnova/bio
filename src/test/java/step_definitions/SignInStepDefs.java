@@ -64,7 +64,7 @@ public class SignInStepDefs {
 		SignInPage sp = new SignInPage();
 		
 		assertTrue(sp.errorMessage.isDisplayed());
-		assertEquals("Authentication failed.", sp.errorMessage.getText());
+		assertEquals("Authentication fail.", sp.errorMessage.getText());
 		Driver.quit();
 	}
 	
@@ -83,7 +83,7 @@ public class SignInStepDefs {
 		SignInPage sp = new SignInPage();
 		
 		assertTrue(sp.errorMessage.isDisplayed());
-		assertEquals("An email address required.", sp.errorMessage.getText());
+		assertEquals("An email address needed.", sp.errorMessage.getText());
 		
 	}
 	

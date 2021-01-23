@@ -1,4 +1,4 @@
-
+@signin
 Feature: Customer sign in
  
 As a user, I want to be able sucessfully sign in
