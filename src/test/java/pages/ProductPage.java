@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import utilities.Driver;
 
@@ -22,5 +23,20 @@ public class ProductPage {
 	
 	@FindBy (id = "quantity_wanted")
 	public WebElement qunatityBox;
+	
+	@FindBy (xpath = "//span[@itemprop='sku']")
+	public WebElement modelName;
+	
+	@FindBy (xpath = "//p[@id='product_condition']//span[@class='editable']")
+	public WebElement condition;
 
+	
+	@FindBy (id = "group_1")
+	public WebElement selectBox;
+	
+	public String getDefaultSize() {
+		
+		return new Select(selectBox).getFirstSelectedOption().getText();
+		
+	}
 }
