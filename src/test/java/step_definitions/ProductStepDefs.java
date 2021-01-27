@@ -3,6 +3,8 @@ package step_definitions;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.List;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
@@ -24,10 +26,10 @@ public class ProductStepDefs {
 	   
 	}
 
-	@Then("The user should land on the same product page and the title has to contain the name")
-	public void theUserShouldLandOnTheSameProductPageAndTheTitleHasToContainTheName() {
+	@Then("The user should land on the same product page and the title has to contain {string}")
+	public void theUserShouldLandOnTheSameProductPageAndTheTitleHasToContainTheName(String expected) {
 	    String actual = Driver.getDriver().getTitle();
-	    assertTrue(actual.contains(expectedProductName));		
+	    assertTrue(actual.contains(expectedProductName));	// expectedProdcutName is being initoialized by the other method	
 	}
 
 	@Then("The product name should be {string}, the price should be {double} and the quantity should be {int}")
@@ -44,6 +46,15 @@ public class ProductStepDefs {
 		assertEquals(expQty, actualQty);
 		
 		
+	}
+	
+	
+	
+	
+
+	@Then("The product information should be the following")
+	public void theProductInformationShouldBeTheFollowing(List<List<String>> dataTable) {
+	   System.out.println(dataTable);
 	}
 
 

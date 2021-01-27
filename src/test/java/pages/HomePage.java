@@ -28,5 +28,10 @@ public class HomePage {
 		return Driver.getDriver().findElement(By.xpath(xpath));
 	}
 	
+	
+	@FindBy (xpath = "//a[@title='Dresses']")
+	public WebElement dressesLink;
+	
+	
 
 }

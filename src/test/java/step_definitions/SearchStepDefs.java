@@ -61,4 +61,18 @@ public class SearchStepDefs {
 	}
 	
 	
+//	@When("The user  {word} in the search bar")
+//	public void theUserInTheSearchBar(String string) {
+//	    // Write code here that turns the phrase above into concrete actions
+//	    throw new io.cucumber.java.PendingException();
+//	}
+//
+//	@Then("The user should {word} in the search page")
+//	public void theUserShouldInTheSearchPage(String string) {
+//	    // Write code here that turns the phrase above into concrete actions
+//	    throw new io.cucumber.java.PendingException();
+//	}
+
+	
+	
 }

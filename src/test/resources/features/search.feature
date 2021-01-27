@@ -39,5 +39,7 @@ Feature: Search functionality
      When The user enters "Sneakers" in the search bar
      Then The user should see "Sneakers" in the search page
      
+    
+     
      
      
