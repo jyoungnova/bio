@@ -76,6 +76,12 @@ public class DBStepDefs {
 	public void iShouldSeeTheFollowingInfoAsMapsWithMapsAsValue(Map<String, Map<String,String>> dataTable) {
 	   System.out.println(dataTable);
 	}
+	
+	
+	@When("I send a query")
+	public void iSendAQuery(String docString) {
+	    System.out.println(docString);
+	}
 
 
 }

@@ -10,6 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
 import pages.ProductPage;
+import pojos.Product;
 import utilities.Driver;
 
 public class ProductStepDefs {
@@ -55,7 +56,7 @@ public class ProductStepDefs {
 
 	@Then("The product information should be the following")
 	public void theProductInformationShouldBeTheFollowing(List<List<String>> dataTable) {
-	   System.out.println(dataTable);
+	   System.out.println(dataTable.get(0).get(1));
 	}
 	
 	
@@ -65,35 +66,70 @@ public class ProductStepDefs {
                
 		ProductPage pp  = new ProductPage();
 		
-		
-				Map<String, String> map = dataTable.get(0);
-				
-				String expectedName = map.get("name");
-				String expectedPrice = map.get("price");
-				String expectedQty = map.get("quantity");
-				String expectedSize = map.get("size");
-				String expectedModel = map.get("modelName");
-				String expectedCondition = map.get("condition");
-				
-				String actualName = pp.productName.getText();
-				String actualPrice = pp.price.getText().replace("$", "");
-				String actualQty = pp.qunatityBox.getAttribute("value");
-				String actualSize = pp.getDefaultSize();
-				String actualModel = pp.modelName.getText();
-				String actualCondition = pp.condition.getText();
-				
-				assertEquals(expectedName, actualName);
-				assertEquals(expectedPrice, actualPrice);
-				assertEquals(expectedQty, actualQty);
-				assertEquals(expectedSize, actualSize);
-				assertEquals(expectedModel, actualModel);
-				assertEquals(expectedCondition, actualCondition);
-				
+		for (Map<String, String> map : dataTable) {
+			
+			
+			String expectedName = map.get("name");
+			String expectedPrice = map.get("price");
+			String expectedQty = map.get("quantity");
+			String expectedSize = map.get("size");
+			String expectedModel = map.get("modelName");
+			String expectedCondition = map.get("condition");
+			
+			String actualName = pp.productName.getText();
+			String actualPrice = pp.price.getText().replace("$", "");
+			String actualQty = pp.qunatityBox.getAttribute("value");
+			String actualSize = pp.getDefaultSize();
+			String actualModel = pp.modelName.getText();
+			String actualCondition = pp.condition.getText();
+			
+			assertEquals(expectedName, actualName);
+			assertEquals(expectedPrice, actualPrice);
+			assertEquals(expectedQty, actualQty);
+			assertEquals(expectedSize, actualSize);
+			assertEquals(expectedModel, actualModel);
+			assertEquals(expectedCondition, actualCondition);
+			
+			
+			
+		}
+			
 		
 		
 		
 		
 	}
+	
+	
+	@When("The product information should be the following using custom type")
+	public void theProductInformationShouldBeTheFollowingUsingCustomType(List<Product> list) {
+		ProductPage pp =new ProductPage();
+		
+		Product blouse = list.get(0);
+		
+		String actualName = pp.productName.getText();
+		String actualPrice = pp.price.getText().replace("$", "");
+		String actualQty = pp.qunatityBox.getAttribute("value");
+		String actualSize = pp.getDefaultSize();
+		String actualModel = pp.modelName.getText();
+		String actualCondition = pp.condition.getText();
+		
+		assertEquals(blouse.getName(), actualName);
+		assertEquals(blouse.getCondition(), actualCondition);
+		assertEquals(blouse.getModelName(), actualModel);
+		assertEquals(blouse.getPrice()+"", actualPrice.substring(0, actualPrice.length()-1));
+		assertEquals(blouse.getQuantity(), Integer.parseInt(actualQty));
+		assertEquals(blouse.getSize(), actualSize);
+	
+		
+		
+
+		
+	    
+	}
+	
+	
+	
 
 
 }

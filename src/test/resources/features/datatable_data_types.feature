@@ -42,7 +42,7 @@ Feature: Datatable data types demo
 			| KJFK | 40.639722 |  -73.778889 |
 	
 	
-			@temp	
+			
 	 Scenario: Update user name
       Given I am connected to the database
       When I send a query to update user name
