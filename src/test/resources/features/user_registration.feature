@@ -1,7 +1,7 @@
 Feature: User registration feature
 
    
-   @temp
+
     Scenario: Verify user registration
     
         Given The User is on the homepage

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.BrowserUtils;
 import utilities.Driver;
 
 public class HomePage {
@@ -33,5 +34,16 @@ public class HomePage {
 	public WebElement dressesLink;
 	
 	
+	
+	public void clickOnLink(String link) {
+	    
+		String xpath = "(//a[.='"+link+"'])[1]" ;
+		BrowserUtils.jsClick(Driver.getDriver().findElement(By.xpath(xpath)));
+	}
+	
+	
+	public String getPageName() {
+		return Driver.getDriver().findElement(By.xpath("//span[@class='category-name']")).getText();
+	}
 
 }

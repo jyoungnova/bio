@@ -31,7 +31,6 @@ public class PojoTransformers {
 	public User getUser (Map<String,String> user) {
 			
 		
-	
 		return new User(user.get("first"), 
 						user.get("last"), 
 						user.get("dateOfBirth"), 
