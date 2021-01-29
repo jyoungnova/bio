@@ -117,7 +117,13 @@ public class ProductStepDefs {
 		assertEquals(blouse.getName(), actualName);
 		assertEquals(blouse.getCondition(), actualCondition);
 		assertEquals(blouse.getModelName(), actualModel);
-		assertEquals(blouse.getPrice()+"", actualPrice.substring(0, actualPrice.length()-1));
+		assertEquals(blouse.getPrice()+"", 
+				
+actualPrice.charAt(actualPrice.length()-1)== '0' ? actualPrice.substring(0, actualPrice.length()-1) :  actualPrice
+				
+					
+				
+				);
 		assertEquals(blouse.getQuantity(), Integer.parseInt(actualQty));
 		assertEquals(blouse.getSize(), actualSize);
 	

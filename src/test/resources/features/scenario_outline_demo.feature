@@ -1,6 +1,6 @@
 Feature: Demo
   
-  @temp
+
     Scenario Outline: Verify data with multiple inputs
     
         Given The User is on the homepage
