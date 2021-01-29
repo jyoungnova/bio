@@ -25,4 +25,10 @@ public class SignInPage {
 	@FindBy (xpath = "//ol/li")
 	public WebElement errorMessage;
 
+	@FindBy (id = "email_create")
+	public WebElement createAcctEmail;
+
+	@FindBy (id = "SubmitCreate")
+	public WebElement createAcctButton;
+
 }

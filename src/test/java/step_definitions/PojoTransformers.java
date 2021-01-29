@@ -1,9 +1,11 @@
 package step_definitions;
 
+import java.util.List;
 import java.util.Map;
 
 import io.cucumber.java.DataTableType;
 import pojos.Product;
+import pojos.User;
 
 public class PojoTransformers {
 	
@@ -25,7 +27,21 @@ public class PojoTransformers {
 	}
 	
 	
+	@DataTableType
+	public User getUser (Map<String,String> user) {
+			
+		
 	
+		return new User(user.get("first"), 
+						user.get("last"), 
+						user.get("dateOfBirth"), 
+						user.get("password"),
+						user.get("address"),
+						user.get("city"),
+						user.get("state"), 
+						user.get("zip"),
+						user.get("phoneNo"));
+	}
 	
 	
 	

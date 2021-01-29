@@ -39,7 +39,7 @@ Feature: Product details
       
       
       
-     @temp 
+    
    Scenario: Verify product deatils using DataTable with Pojos 
       Given The User is on the homepage
       When The user clicks on "Blouse"
