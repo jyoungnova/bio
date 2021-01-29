@@ -69,6 +69,11 @@ Feature: Product details
           | Printed Dress				     |    26.00         | 1           |  demo_3     | New          | S           | 
           | Printed Summer Dress             |    28.98         | 1           |  demo_5     | New          | S           |
           | Printed Chiffon Dress            |    16.40         | 1           |  demo_7     | New          | S           |
+          | Blouse                           |    27.00         | 1           |  demo_2     | New          | S           |
+          | Faded Short Sleeve T-shirts      |    16.51         | 1           |  demo_1     | New          | S           |
+          | Printed Dress				     |    26.00         | 1           |  demo_3     | New          | S           | 
+          | Printed Summer Dress             |    28.98         | 1           |  demo_5     | New          | S           |
+          | Printed Chiffon Dress            |    16.40         | 1           |  demo_7     | New          | S           |
           
           
           
