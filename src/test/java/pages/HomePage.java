@@ -29,6 +29,10 @@ public class HomePage {
 		return Driver.getDriver().findElement(By.xpath(xpath));
 	}
 	
+	public void clickOnProduct(String product) {
+		getProduct(product).click();
+	}
+	
 	
 	@FindBy (xpath = "//a[@title='Dresses']")
 	public WebElement dressesLink;

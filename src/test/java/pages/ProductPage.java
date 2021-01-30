@@ -34,6 +34,16 @@ public class ProductPage {
 	@FindBy (id = "group_1")
 	public WebElement selectBox;
 	
+	@FindBy (xpath = "//td[.='Compositions']/following-sibling::td")
+	public WebElement composition;
+
+
+	@FindBy (xpath = "//td[.='Styles']/following-sibling::td")
+	public WebElement styles;
+	
+	
+	
+	
 	public String getDefaultSize() {
 		
 		return new Select(selectBox).getFirstSelectedOption().getText();

@@ -51,7 +51,7 @@ Feature: Product details
       Then The user should land on the same product page and the title has to contain "Blouse"
       
       
-        @temp
+      
     Scenario Outline: Verify multiple product details 
       Given The User is on the homepage
       When The user clicks on "<productName>"
@@ -76,8 +76,15 @@ Feature: Product details
           | Printed Chiffon Dress            |    16.40         | 1           |  demo_7     | New          | S           |
           
           
-          
-          
+         
+         
+         
+         
+         @temp 
+       Scenario: Verify the product details on promotion using Excel file
+           
+           Given The User is on the homepage
+           Then The promoted product details should be correct
           
           
           
