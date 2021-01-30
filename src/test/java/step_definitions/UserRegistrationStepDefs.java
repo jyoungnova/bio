@@ -55,5 +55,33 @@ public class UserRegistrationStepDefs {
 		assertTrue(Driver.getDriver().getPageSource().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
 		
 	}
+	
+	
+	@When("The user enters {string} , {string} , {string} , {string} , {string} , {string} , {string} , {string}, {string}")
+	public void theUserEnters(String first, String last, String pass, String dob, String addr, String city, String state, String zip, String phone) {
+	    
+		
+		
+	  
+		
+		RegisterPage rp = new RegisterPage();
+		
+		rp.firstName.sendKeys(first);
+		rp.lastName.sendKeys(last);
+		rp.password.sendKeys(pass);
+		
+		rp.selectDOB(dob);
+		
+		rp.address.sendKeys(addr);
+		rp.city.sendKeys(city);
+		rp.selectState(state);
+		rp.zip.sendKeys(zip);
+		rp.phone.sendKeys(phone);
+		
+		
+		rp.registerButton.click();
+		
+	}
+
 
 }

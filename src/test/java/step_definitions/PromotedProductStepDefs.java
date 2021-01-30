@@ -22,7 +22,7 @@ public class PromotedProductStepDefs {
 		HomePage hp = new HomePage();
 		ProductPage pp = new ProductPage();
 		
-		ExcelUtils sheet = new ExcelUtils("testData.xlsx", "Sheet1");
+		ExcelUtils sheet = new ExcelUtils("src/test/resources/testData/testData.xlsx", "Sheet1");
 		
 		List<Map<String, String>> rows = sheet.getDataAsMap();
 		

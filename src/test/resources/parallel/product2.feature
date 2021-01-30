@@ -80,7 +80,7 @@ Feature: Product details
          
          
          
-         @temp 
+          @temp
        Scenario: Verify the product details on promotion using Excel file
            
            Given The User is on the homepage

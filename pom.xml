@@ -113,12 +113,24 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+				 <version>3.0.0-M5</version>
+				
 				<configuration>
-					<testFailureIgnore>true</testFailureIgnore>
+					
+					
+				<!-- 	<parallel>methods</parallel>
+					<useUnlimitedThreads>true</useUnlimitedThreads> -> for parallel run
+					 -->
 					<includes>
 						<!-- name of your Runner class -->
 						<include>**/*CukeRunner.java</include>
 					</includes>
+					
+					
+					
+					
+					
+					
 				</configuration>
 			</plugin>
 			<plugin>
@@ -143,6 +155,8 @@
 								<!-- supports wildcard or name pattern -->
 								<param>**/*cucumber.json</param>
 							</jsonFiles>
+
+							
 
 						</configuration>
 					</execution>
