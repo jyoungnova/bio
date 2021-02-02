@@ -16,7 +16,7 @@ As a user, I want to be able sucessfully sign in
      And The user enters incorrect credentials
      Then The user should not login and the error message should appear with the text Invalid Email Address
    
-   @test 
+   @test @regression
    Scenario: Verify negative login using no credentials
      And The user enters no credentials
      Then The user should not login and the error message should appear with the text An email address required
