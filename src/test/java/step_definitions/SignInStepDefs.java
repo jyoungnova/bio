@@ -64,7 +64,7 @@ public class SignInStepDefs {
 		SignInPage sp = new SignInPage();
 		
 		assertTrue(sp.errorMessage.isDisplayed());
-		assertEquals("Authentication fail.", sp.errorMessage.getText());
+		assertEquals("Authentication failed.", sp.errorMessage.getText());
 		Driver.quit();
 	}
 	
