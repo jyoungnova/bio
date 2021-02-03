@@ -10,6 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
 import pages.SignInPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class SignInStepDefs {
@@ -18,7 +19,7 @@ public class SignInStepDefs {
 	@Given("The User is on the homepage")
 	public void the_User_is_on_the_homepage() {
 	   
-		Driver.getDriver().get("http://automationpractice.com/");
+		Driver.getDriver().get(ConfigReader.getProperty("url"));
 			
 	}
 
