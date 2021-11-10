@@ -15,19 +15,15 @@ public class HomePage {
 	}
 	
 	
-	@FindBy (xpath = "//a[@class='login']")
-	public WebElement signInLink;
+	@FindBy (xpath = "//input[@class='form-control login_field ng-pristine ng-invalid ng-touched']")
+	public WebElement userName;
 	
 	
-	@FindBy (id = "search_query_top")
-	public WebElement searchBar;
+	@FindBy (xpath = "//input[@class='form-control login_field ng-untouched ng-pristine ng-invalid']")
+	public WebElement password;
 	
 	
-	public WebElement getProduct(String prod) {
-		
-		String xpath = "//a[@class='product-name'][@title='"+ prod +"']" ;
-		return Driver.getDriver().findElement(By.xpath(xpath));
-	}
+	
 	
 	public void clickOnProduct(String product) {
 		getProduct(product).click();

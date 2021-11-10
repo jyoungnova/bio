@@ -14,12 +14,12 @@ import utilities.Driver;
 public class SearchStepDefs {
 	
 	
-	@When("The user enters a search term in the search bar")
-	public void the_user_enters_a_search_term_in_the_search_bar() {
-	    HomePage hp = new HomePage();
-	    hp.searchBar.sendKeys("Blouse" + Keys.ENTER);
-	    
-	}
+//	@When("The user enters a search term in the search bar")
+//	public void the_user_enters_a_search_term_in_the_search_bar() {
+//	    HomePage hp = new HomePage();
+//	    hp.searchBar.sendKeys("Blouse" + Keys.ENTER);
+//	    
+	//}
 
 	@Then("The user should land on serch page and title should be Search - My Store")
 	public void the_user_should_land_on_serch_page_and_title_should_be_search_my_store() {
@@ -32,7 +32,7 @@ public class SearchStepDefs {
 	@When("The user enters Blouse in the search bar")
 	public void theUserEntersBlouseInTheSearchBar() {
 		 HomePage hp = new HomePage();
-		 hp.searchBar.sendKeys("Blouse" + Keys.ENTER);
+		// hp.searchBar.sendKeys("Blouse" + Keys.ENTER);
 	}
 
 	@Then("The user should see Blouse in the search page")
@@ -49,7 +49,7 @@ public class SearchStepDefs {
 	@When("The user enters {string} in the search bar")
 	public void theUserEntersInTheSearchBar(String product) {
 		HomePage hp = new HomePage();
-		 hp.searchBar.sendKeys(product + Keys.ENTER);
+		// hp.searchBar.sendKeys(product + Keys.ENTER);
 	}
 
 	@Then("The user should see {string} in the search page")

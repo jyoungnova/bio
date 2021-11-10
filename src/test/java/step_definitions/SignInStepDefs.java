@@ -27,7 +27,9 @@ public class SignInStepDefs {
 	public void the_user_clicks_on_sign_in_button() {
 
 		  HomePage hp = new HomePage();
-		  hp.signInLink.click();
+		  hp.userName.sendKeys(ConfigReader.getProperty("userName"));
+		  hp.password.sendKeys(ConfigReader.getProperty("password"));
+		  
 
 		
 	}

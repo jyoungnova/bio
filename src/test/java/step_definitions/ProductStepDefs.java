@@ -19,14 +19,14 @@ public class ProductStepDefs {
 	 String expectedProductName;
 	
 	
-	@When("The user clicks on {string}")
-	public void theUserClicksOn(String product) {
-		HomePage hp = new HomePage();
-		expectedProductName = product;  // sharing a state/data between step def methods is very common
-		hp.getProduct(product).click();
-		
-	   
-	}
+//	@When("The user clicks on {string}")
+//	public void theUserClicksOn(String product) {
+//		HomePage hp = new HomePage();
+//		expectedProductName = product;  // sharing a state/data between step def methods is very common
+//		hp.getProduct(product).click();
+//		
+//	   
+//	}
 
 	@Then("The user should land on the same product page and the title has to contain {string}")
 	public void theUserShouldLandOnTheSameProductPageAndTheTitleHasToContainTheName(String expected) {
