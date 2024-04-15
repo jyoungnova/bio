@@ -25,9 +25,7 @@ public class HomePage {
 	
 	
 	
-	public void clickOnProduct(String product) {
-		getProduct(product).click();
-	}
+	
 	
 	
 	@FindBy (xpath = "//a[@title='Dresses']")
