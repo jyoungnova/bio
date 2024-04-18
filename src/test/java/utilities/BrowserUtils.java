@@ -183,11 +183,11 @@ public class BrowserUtils {
 		return target;
 	}
 
-	public static void takeScreenshot(String fileName)  {
+	public static void takeScreenshot(WebElement firstImage)  {
 		TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-		String path = System.getProperty("user.dir") + "/test-output/Screenshots/" + fileName + date + ".png";
+		String path = System.getProperty("user.dir") + "/test-output/Screenshots/" + firstImage + date + ".png";
 		File finalDestination = new File(path);
 		try {
 			FileUtils.copyFile(source, finalDestination);

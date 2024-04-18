@@ -1,25 +1,33 @@
-@signin
+@smoke
 Feature: Customer sign in
  
 As a user, I want to be able sucessfully sign in
 
   Background: 
     	Given The User is on the homepage
-    	When The user clicks on sign in button
+    	
 
-   @login @smoke
-   Scenario: Verify Sign in page title
-      	Then The user should land on sign in page and the title should be Login - My Store
+  
+   Scenario Outline: Verify Sign in page title
+   			When The user enters "<username>" and "<password>"
+  			When The user clicks on sign in button
+      	Then The user should land on home page
    	
-   @negative @smoke @login
-   Scenario: Verify negative login using wrong credentials
-     And The user enters incorrect credentials
-     Then The user should not login and the error message should appear with the text Invalid Email Address
-   
-   @test @regression
-   Scenario: Verify negative login using no credentials
-     And The user enters no credentials
-     Then The user should not login and the error message should appear with the text An email address required
-    
-     
    	
+   Examples:
+   	|username     |  password   |
+   	|standard_user| secret_sauce|
+   	
+   	
+   	
+   Scenario Outline: Verify Sign in page title
+   			When The user enters "<username>" and "<password>"
+  		  When The user clicks on sign in button
+      	Then The error message is displayed
+   	
+   	
+   Examples:
+   	|username       |  password   |
+   	|locked_out_user| secret_sauce|
+   	
+  

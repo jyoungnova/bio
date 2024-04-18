@@ -13,22 +13,16 @@ public class SignInPage {
 	}
 	
 	
-	@FindBy (id = "email")
+	@FindBy (id = "user-name")
 	public WebElement username;
 	
-	@FindBy (id = "passwd")
+	@FindBy (id = "password")
 	public WebElement password;
 	
-	@FindBy (id = "SubmitLogin")
-	public WebElement signInButton;
+	@FindBy (xpath = "//input[@id='login-button']")
+	public WebElement loginButton;
 
-	@FindBy (xpath = "//ol/li")
-	public WebElement errorMessage;
-
-	@FindBy (id = "email_create")
-	public WebElement createAcctEmail;
-
-	@FindBy (id = "SubmitCreate")
-	public WebElement createAcctButton;
-
+	
+	@FindBy (xpath = "//h3[@data-test=\"error\"]")
+	public WebElement errorMessageOnSignInPage;
 }
